@@ -119,14 +119,16 @@ if __name__ == '__main__':
 
     team_points_average = [161.67, 161.33, 147.00, 146.00, 120.00, 110.00, 117.33, 102.67, 77.67, 86.33]
     team_points_rolling_average = [161, 151, 143, 130, 130, 121, 122, 100, 80, 88]
+    team_points_bahrain = [173, 160, 151, 146, 99, 108, 116, 114, 75, 88]
     team_points_portugal = [175, 167, 135, 139, 137, 105, 113, 95, 75, 89]
     team_points_italia = [137, 157, 155, 153, 124, 117, 123, 99, 83, 82]
 
+    team_salaries_bahrain = [30, 27.2, 24.4, 17.4, 16.7, 20.2, 113.2, 12.5, 6.9, 5.5]
     team_salaries_italia = [27.0, 26.5, 25.1, 20.4, 17.9, 18.5, 14.6, 12.0, 7.0, 5.4]
     team_salaries_portugal = [27.7, 26.6, 25.0, 20.0, 18.8, 17.2, 14.9, 11.6, 6.5, 5.9]
 
-    drivers_salaries_actual = drivers_salaries_portugal
-    team_salaries_actual = team_salaries_portugal
+    drivers_salaries_actual = drivers_salaries_bahrain
+    team_salaries_actual = team_salaries_bahrain
     datos_carrera_actual = (drivers_salaries_actual, drivers_points_portugal, team_salaries_actual, team_points_portugal)
 
     sol_average = calcula((drivers_salaries_actual, drivers_points_average), (team_salaries_actual, team_points_average), presupuesto, "Average")
