@@ -1,12 +1,10 @@
 from bt_scheme import PartialSolutionWithOptimization, BacktrackingOptSolver, State, Solution
 from typing import *
 
-#presupuesto, puntos
 
 def f1league_points_solver(drivers, teams, budget):
     drivers_salaries, drivers_points = drivers
     team_salaries, team_points = teams
-    print(drivers_salaries)
 
     class f1pointsPS(PartialSolutionWithOptimization):
         def __init__(self, decisions: Tuple[int], n: int, taken: int, current_spending: int, current_score: int,
@@ -26,9 +24,8 @@ def f1league_points_solver(drivers, teams, budget):
 
         def successors(self) -> Iterable["f1pointsPS"]:
             if self.team is None:
-                # print(len(team_salaries))
                 for team in range(len(team_points)):
-                    print(team)
+                    print(f"Traying with {teams_labels[team]}")
                     yield f1pointsPS(self.decisions, self.n, self.taken, self.current_spending + team_salaries[team],
                                      self.current_score + team_points[team], team)
             elif self.n < len(drivers_salaries):
@@ -107,9 +104,11 @@ if __name__ == '__main__':
 
     drivers_points_average = [174.33, 168.33, 137.00, 161.67, 141.67, 151.00, 133.33, 114.33, 136.67, 126.00, 122.0, 125.67, 100.33, 119.67, 109.33, 97.00, 94.33, 94.00, 73.33, 72.00]
     drivers_points_rolling_average = [154, 165, 140, 140, 149, 147, 143, 114, 136, 123, 117, 122, 114, 119, 106, 109, 96, 94, 85, 72]
-    drivers_points_italia = [184, 171, 88, 170, 130, 158, 137, 122, 157, 128, 140, 147, 96, 119, 100, 107, 79, 95, 67, 88]
+    driver_points_bahrain = [170, 167, 158, 164, 148, 147, 134, 89, 129, 110, 126, 106, 95, 146, 109, 119, 105, ]
+    drivers_points_italia = [184, 171, 88, 170, 130, 158, 137, 122, 157, 128, 140, 147, 96, 119, 100, 107, 79, 95, 67, 88, 99, 76, 55]
     drivers_points_portugal = [169, 167, 165, 151, 147, 148, 129, 132, 124, 140, 100, 124, 110, 94, 119, 65, 99, 88, 77, 73]
 
+    drivers_salaries_bahrain = [29.7, 30.3, 27.5, 24.0, 26.1, 28.1, 23.9, 21.5, 18.5, 14.4, 17.1, 14.5, 17.6, 13.8, 11.0, 13.8, 9.2, 6.8, 6.6, 4.2]
     drivers_salaries_italia = [30.5, 30.5, 25.5, 25.4, 24.5, 23.3, 23.2, 20.2, 20.4, 15.2, 18.5, 16.5, 15.6, 13.9, 11.0, 13.5,
                         7.5, 6.9, 5.2, 4.6]
     drivers_salaries_portugal = [31.1, 30.7, 26.5, 26.0, 24.5, 24.0, 22.3, 20.4, 19.8, 17.1, 16.6, 16.4, 14.9, 12.3, 11.8, 11.5, 7.9, 6.7, 5.0, 4.1]
