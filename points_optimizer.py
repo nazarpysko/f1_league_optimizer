@@ -60,7 +60,8 @@ if __name__ == '__main__':
               "Stroll", "Gasly", "Vettel", "Tsunoda", "Giovinazzi", "Raikkonen", "Russell", "Schumacher", "Latifi",
               "Mazepin"]
 
-    points = [154, 165, 140, 140, 149, 147, 143, 114, 136, 123, 117, 122, 114, 119, 106, 109, 96, 94, 85, 72]
+    # parte actualizado points = [167, 169, 165, 151, 147, 148, 143, 114, 136, 123, 117, 122, 114, 119, 106, 109, 96, 94, 85, 72]
+    points = [167, 169, 165, 151, 147, 148, 129, 132, 124, 140, 100, 124, 110, 94, 119, 65, 99, 88, 77, 73]
     salaries = [31.1, 30.7, 26.5, 26.0, 24.5, 24.0, 22.3, 20.4, 19.8, 17.1, 16.6, 16.4, 14.9, 12.3, 11.8, 11.5, 7.9,
                 6.7, 5.0, 4.1]
 
@@ -73,9 +74,11 @@ if __name__ == '__main__':
         print(sol)
     print("\n<TERMINADO>")
 
+    #max de la app
     total = 0
     sol_optima = [0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
     for indice, i in enumerate(sol_optima):
+        print(f'indice {indice} i {i} points{points[indice] * i}')
         total += points[indice] * i
 
     print(total)
