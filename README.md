@@ -1,1 +1,1 @@
-"# f1_league_optimizer" 
+# f1_league_optimizer
